@@ -8,6 +8,8 @@ import ForgotPassword from './pages/ForgotPassword';
 import Offers from './pages/Offers';
 
 function App() {
+  
+
   return (
     <>
       <Router>
