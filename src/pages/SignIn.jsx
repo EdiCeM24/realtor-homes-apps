@@ -9,8 +9,12 @@ export default function SignIn() {
   const { email, password } = formData;
   function onChange(e) {
     // console.log(e.target.value);
-
+    setFormdata((prevState) => ({
+      ...prevState,
+      [e.target.id]: e.target.value, 
+    }))
   }
+
   return (
     <section>
         <h1 className="text-3xl text-center text-rose-300 mt-6 font-bold">Sign In</h1>
@@ -22,9 +26,9 @@ export default function SignIn() {
 
           <div className='w-ful md:w-[67%] lg:w-[40%] lg:ml-20'>
             <form>
-              <input className='w-full' type='email' id='email' value={email} onChange={onChange}/>
+              <input type='email' id='email' value={email} onChange={onChange} placeholder='Enter email' className="w-full px-4 py-2 text-xl text-gray-700 bg-white border-gray-300 rounded transition ease-in-out"/>
 
-              <input type='password' id='' className='w-full ' value={password} />
+              <input type='password' id='password' value={password} onChange={onChange} placeholder='Enter password' className="w-full px-4 py-2 text-xl text-gray-700 bg-white border-gray-300 rounded transition ease-in-out"/>
             </form>
           </div>
         </div>
